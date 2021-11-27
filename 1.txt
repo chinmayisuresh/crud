@@ -47,3 +47,5 @@ db.users.remove({"first_name":"Mercy"})
 db.users.deleteOne({gender:"Female"})
 
 db.users.deleteMany({gender:"Female"})
+
+db.dropDatabase()
