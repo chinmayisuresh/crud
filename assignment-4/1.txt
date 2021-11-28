@@ -1,29 +1,51 @@
-db.movie.find({"movie_name":{$eq:"Koran by Heart"}})
+ db.users.insert({
+     {"first_name":"Stacy","last_name":"Ginglell","email":"sginglell6@tumblr.com","gender":"Female","ip_address":"115.24.178.203","age":44}
+ });
 
-db.movie.find({"movie_name":{$ne:"Koran by Heart"}})
+db.users.insertMany(
 
- db.movie.find({"movie_name":{$ne:"Koran by Heart"}})
-
-  db.movie.find({"budget":{$gte:15000}}).pretty()
-
-   db.movie.find({"budget":{$gt:10000}}).pretty()
-
-   db.movie.find({"budget":{$lt:15000}}).pretty()
-
-   db.movie.find({"budget":{$lte:15000}}).pretty()
-
-   db.movie.find({$and:[{year:{$gt:2000}},{"budget":{$gt:10000}}]})
-
-    db.movie.find({$or:[{year:{$gt:2000}},{"budget":{$gt:10000}}]})
-
-     db.movie.find({$nor:[{year:{$gt:2000}},{"budget":{$gt:10000}}]})
-
-      db.movie.find({$or:[{$not:{year:{$gt:2000}}},{"budget":{$not{$gt:10000}}]}})
-
-       db.movie.find({$and:[{year:{$gt:2000}},{year:{$gt:2010}}]})
-
-        db.movie.find({}).sort({"year":-1,"movie_name":-1})
-
-        db.movie.find({}).sort({"year":-1,"movie_name":-1}).skip(10).limit(5)
-
+{
         
+        "first_name" : "Ashbey",
+        "last_name" : "Darkin",
+        "email" : "adarkin0@seattletimes.com",
+        "gender" : "Genderfluid",
+        "ip_address" : "43.41.123.238",
+        "age" : 21
+}
+{
+        
+        "first_name" : "Bax",
+        "last_name" : "Gueinn",
+        "email" : "bgueinn1@aol.com",
+        "gender" : "Polygender",
+        "ip_address" : "135.107.99.140",
+        "age" : 60
+}
+{
+    
+        "first_name" : "Tobe",
+        "last_name" : "Yarnell",
+        "email" : "tyarnell2@cbslocal.com",
+        "gender" : "Polygender",
+        "ip_address" : "149.33.127.207",
+        "age" : 49
+})
+
+
+db.users.find()
+
+db.users.findOne({"first_name":"Stacy"})
+
+db.users.update({"_id":ObjectId("61a2594b56b4f7e05ad6fb76")"},{$set:{"first_name":"Mercy"}})
+
+db.users.updateMany({year:1999},{$set:{year:1990}})
+
+
+db.users.remove({"first_name":"Mercy"})
+
+db.users.deleteOne({gender:"Female"})
+
+db.users.deleteMany({gender:"Female"})
+
+db.dropDatabase()
