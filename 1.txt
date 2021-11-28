@@ -1,0 +1,51 @@
+ db.users.insert({
+     {"first_name":"Stacy","last_name":"Ginglell","email":"sginglell6@tumblr.com","gender":"Female","ip_address":"115.24.178.203","age":44}
+ });
+
+db.users.insertMany(
+
+{
+        
+        "first_name" : "Ashbey",
+        "last_name" : "Darkin",
+        "email" : "adarkin0@seattletimes.com",
+        "gender" : "Genderfluid",
+        "ip_address" : "43.41.123.238",
+        "age" : 21
+}
+{
+        
+        "first_name" : "Bax",
+        "last_name" : "Gueinn",
+        "email" : "bgueinn1@aol.com",
+        "gender" : "Polygender",
+        "ip_address" : "135.107.99.140",
+        "age" : 60
+}
+{
+    
+        "first_name" : "Tobe",
+        "last_name" : "Yarnell",
+        "email" : "tyarnell2@cbslocal.com",
+        "gender" : "Polygender",
+        "ip_address" : "149.33.127.207",
+        "age" : 49
+})
+
+
+db.users.find()
+
+db.users.findOne({"first_name":"Stacy"})
+
+db.users.update({"_id":ObjectId("61a2594b56b4f7e05ad6fb76")"},{$set:{"first_name":"Mercy"}})
+
+db.users.updateMany({year:1999},{$set:{year:1990}})
+
+
+db.users.remove({"first_name":"Mercy"})
+
+db.users.deleteOne({gender:"Female"})
+
+db.users.deleteMany({gender:"Female"})
+
+db.dropDatabase()
