@@ -1,0 +1,29 @@
+db.movie.find({"movie_name":{$eq:"Koran by Heart"}})
+
+db.movie.find({"movie_name":{$ne:"Koran by Heart"}})
+
+ db.movie.find({"movie_name":{$ne:"Koran by Heart"}})
+
+  db.movie.find({"budget":{$gte:15000}}).pretty()
+
+   db.movie.find({"budget":{$gt:10000}}).pretty()
+
+   db.movie.find({"budget":{$lt:15000}}).pretty()
+
+   db.movie.find({"budget":{$lte:15000}}).pretty()
+
+   db.movie.find({$and:[{year:{$gt:2000}},{"budget":{$gt:10000}}]})
+
+    db.movie.find({$or:[{year:{$gt:2000}},{"budget":{$gt:10000}}]})
+
+     db.movie.find({$nor:[{year:{$gt:2000}},{"budget":{$gt:10000}}]})
+
+      db.movie.find({$or:[{$not:{year:{$gt:2000}}},{"budget":{$not{$gt:10000}}]}})
+
+       db.movie.find({$and:[{year:{$gt:2000}},{year:{$gt:2010}}]})
+
+        db.movie.find({}).sort({"year":-1,"movie_name":-1})
+
+        db.movie.find({}).sort({"year":-1,"movie_name":-1}).skip(10).limit(5)
+
+        
